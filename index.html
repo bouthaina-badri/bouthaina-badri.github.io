@@ -6,296 +6,142 @@
 <title>Bouthaina BADRI – Portfolio BI & Power Platform</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --navy: #0D1B2A;
-    --navy2: #152238;
-    --blue: #1E5DA8;
-    --electric: #2E8BF5;
-    --gold: #F0A500;
-    --gold-light: #FFD166;
-    --white: #FFFFFF;
-    --gray: #8899AA;
-    --light: #F4F7FC;
-    --card: #1A2B40;
-    --card2: #162035;
-  }
+:root{--navy:#0D1B2A;--navy2:#152238;--blue:#1E5DA8;--electric:#2E8BF5;--gold:#F0A500;--white:#fff;--gray:#8899AA;--card:#1A2B40;--card2:#162035;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Space Grotesk',sans-serif;background:var(--navy);color:var(--white);overflow-x:hidden;}
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+/* NAV */
+nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(13,27,42,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(46,139,245,0.2);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.nav-logo{font-family:'DM Mono',monospace;color:var(--gold);font-size:1.1rem;font-weight:500;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{color:var(--gray);text-decoration:none;font-size:0.9rem;transition:color 0.2s;}
+.nav-links a:hover{color:var(--gold);}
 
-  html { scroll-behavior: smooth; }
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding:80px 5% 60px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;background:radial-gradient(circle,rgba(46,139,245,0.12) 0%,transparent 70%);}
+.hero-content{max-width:750px;position:relative;z-index:1;}
+.hero-tag{display:inline-block;font-family:'DM Mono',monospace;font-size:0.8rem;color:var(--gold);border:1px solid rgba(240,165,0,0.3);padding:6px 14px;border-radius:20px;margin-bottom:2rem;letter-spacing:0.1em;}
+.hero h1{font-size:clamp(2.8rem,6vw,5rem);font-weight:700;line-height:1.05;margin-bottom:0.5rem;}
+.hero h1 span{color:var(--electric);}
+.hero-sub{font-size:1.1rem;color:var(--gold);font-weight:500;margin-bottom:1.5rem;}
+.hero-desc{font-size:1rem;color:var(--gray);line-height:1.8;max-width:600px;margin-bottom:2.5rem;}
+.hero-stats{display:flex;gap:3rem;margin-bottom:2.5rem;flex-wrap:wrap;}
+.stat-num{font-size:2.2rem;font-weight:700;color:var(--gold);font-family:'DM Mono',monospace;line-height:1;}
+.stat-label{font-size:0.8rem;color:var(--gray);margin-top:4px;}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;}
+.btn-primary{background:var(--electric);color:white;padding:14px 28px;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.95rem;transition:transform 0.2s,box-shadow 0.2s;display:inline-flex;align-items:center;gap:8px;}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(46,139,245,0.4);}
+.btn-outline{border:1px solid rgba(255,255,255,0.2);color:white;padding:14px 28px;border-radius:8px;text-decoration:none;font-weight:500;font-size:0.95rem;transition:border-color 0.2s;}
+.btn-outline:hover{border-color:var(--gold);}
 
-  body {
-    font-family: 'Space Grotesk', sans-serif;
-    background: var(--navy);
-    color: var(--white);
-    overflow-x: hidden;
-  }
+/* SECTIONS */
+section{padding:100px 5%;}
+.section-tag{font-family:'DM Mono',monospace;font-size:0.75rem;color:var(--electric);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:1rem;}
+.section-title{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;margin-bottom:1rem;}
+.section-sub{color:var(--gray);font-size:1rem;line-height:1.7;max-width:600px;margin-bottom:3.5rem;}
 
-  /* NAV */
-  nav {
-    position: fixed; top: 0; width: 100%; z-index: 100;
-    background: rgba(13,27,42,0.95);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(46,139,245,0.2);
-    padding: 0 5%;
-    display: flex; align-items: center; justify-content: space-between;
-    height: 64px;
-  }
-  .nav-logo {
-    font-family: 'DM Mono', monospace;
-    color: var(--gold); font-size: 1.1rem; font-weight: 500;
-    letter-spacing: 0.05em;
-  }
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a {
-    color: var(--gray); text-decoration: none; font-size: 0.9rem;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--gold); }
+/* QR FOLIO BANNER */
+.freelance-banner{background:linear-gradient(135deg,#1a1000,#2a1f00);border:1px solid rgba(240,165,0,0.3);border-radius:16px;padding:32px 40px;display:flex;align-items:center;gap:32px;margin-bottom:60px;flex-wrap:wrap;}
+.qrfolio-logo{width:120px;height:60px;object-fit:contain;border-radius:8px;flex-shrink:0;}
+.freelance-title{font-size:1.3rem;font-weight:700;color:var(--gold);margin-bottom:0.5rem;}
+.freelance-desc{color:var(--gray);font-size:0.92rem;line-height:1.7;}
+.freelance-badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;}
+.f-badge{font-size:0.75rem;padding:4px 12px;border-radius:20px;background:rgba(240,165,0,0.1);border:1px solid rgba(240,165,0,0.3);color:var(--gold);}
 
-  /* HERO */
-  .hero {
-    min-height: 100vh;
-    display: flex; align-items: center;
-    padding: 80px 5% 60px;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute; top: -200px; right: -200px;
-    width: 700px; height: 700px;
-    background: radial-gradient(circle, rgba(46,139,245,0.12) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .hero::after {
-    content: '';
-    position: absolute; bottom: -100px; left: -100px;
-    width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(240,165,0,0.08) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .hero-content { max-width: 750px; position: relative; z-index: 1; }
-  .hero-tag {
-    display: inline-block;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.8rem; color: var(--gold);
-    border: 1px solid rgba(240,165,0,0.3);
-    padding: 6px 14px; border-radius: 20px;
-    margin-bottom: 2rem;
-    letter-spacing: 0.1em;
-  }
-  .hero h1 {
-    font-size: clamp(2.8rem, 6vw, 5rem);
-    font-weight: 700; line-height: 1.05;
-    margin-bottom: 0.5rem;
-  }
-  .hero h1 span { color: var(--electric); }
-  .hero-sub {
-    font-size: 1.15rem; color: var(--gold);
-    font-weight: 500; margin-bottom: 1.5rem;
-    letter-spacing: 0.02em;
-  }
-  .hero-desc {
-    font-size: 1rem; color: var(--gray);
-    line-height: 1.8; max-width: 600px;
-    margin-bottom: 2.5rem;
-  }
-  .hero-stats {
-    display: flex; gap: 3rem; margin-bottom: 2.5rem;
-    flex-wrap: wrap;
-  }
-  .stat { text-align: left; }
-  .stat-num {
-    font-size: 2.2rem; font-weight: 700; color: var(--gold);
-    font-family: 'DM Mono', monospace; line-height: 1;
-  }
-  .stat-label { font-size: 0.8rem; color: var(--gray); margin-top: 4px; }
-  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .btn-primary {
-    background: var(--electric);
-    color: white; padding: 14px 28px;
-    border-radius: 8px; text-decoration: none;
-    font-weight: 600; font-size: 0.95rem;
-    transition: transform 0.2s, box-shadow 0.2s;
-    display: inline-flex; align-items: center; gap: 8px;
-  }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(46,139,245,0.4); }
-  .btn-outline {
-    border: 1px solid rgba(255,255,255,0.2);
-    color: white; padding: 14px 28px;
-    border-radius: 8px; text-decoration: none;
-    font-weight: 500; font-size: 0.95rem;
-    transition: border-color 0.2s, background 0.2s;
-  }
-  .btn-outline:hover { border-color: var(--gold); background: rgba(240,165,0,0.05); }
+/* PROJECTS GRID */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem;}
+.project-card{background:var(--card);border:1px solid rgba(255,255,255,0.06);border-radius:12px;overflow:hidden;cursor:pointer;transition:transform 0.2s,border-color 0.2s,box-shadow 0.2s;position:relative;}
+.project-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--electric),var(--gold));opacity:0;transition:opacity 0.2s;}
+.project-card:hover{transform:translateY(-4px);border-color:rgba(46,139,245,0.3);box-shadow:0 12px 40px rgba(0,0,0,0.3);}
+.project-card:hover::before{opacity:1;}
+.project-img{width:100%;height:180px;object-fit:cover;border-bottom:1px solid rgba(255,255,255,0.06);display:block;}
+.project-img-placeholder{width:100%;height:180px;background:linear-gradient(135deg,var(--navy2),var(--card2));display:flex;align-items:center;justify-content:center;font-size:3rem;border-bottom:1px solid rgba(255,255,255,0.06);}
+.project-body{padding:20px;}
+.project-tag{display:inline-block;font-size:0.72rem;font-family:'DM Mono',monospace;color:var(--electric);background:rgba(46,139,245,0.1);padding:3px 10px;border-radius:4px;margin-bottom:0.6rem;}
+.freelance-tag{display:inline-block;font-size:0.72rem;font-family:'DM Mono',monospace;color:var(--gold);background:rgba(240,165,0,0.1);padding:3px 10px;border-radius:4px;margin-bottom:0.6rem;margin-left:6px;}
+.project-title{font-size:1rem;font-weight:600;margin-bottom:0.6rem;}
+.project-desc{color:var(--gray);font-size:0.85rem;line-height:1.6;margin-bottom:1rem;}
+.project-tools{display:flex;flex-wrap:wrap;gap:6px;}
+.tool-badge{font-size:0.72rem;padding:3px 9px;border-radius:4px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);color:var(--gray);}
+.click-hint{font-size:0.75rem;color:var(--electric);margin-top:10px;opacity:0.7;}
 
-  /* SECTIONS */
-  section { padding: 100px 5%; }
-  .section-tag {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.75rem; color: var(--electric);
-    letter-spacing: 0.15em; text-transform: uppercase;
-    margin-bottom: 1rem;
-  }
-  .section-title {
-    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-    font-weight: 700; margin-bottom: 1rem;
-  }
-  .section-sub { color: var(--gray); font-size: 1rem; line-height: 1.7; max-width: 600px; margin-bottom: 3.5rem; }
+/* MODAL */
+.modal-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);z-index:1000;overflow-y:auto;padding:40px 20px;}
+.modal-overlay.active{display:flex;align-items:flex-start;justify-content:center;}
+.modal{background:var(--navy2);border:1px solid rgba(46,139,245,0.2);border-radius:16px;max-width:900px;width:100%;padding:40px;position:relative;margin:auto;}
+.modal-close{position:absolute;top:16px;right:20px;background:none;border:none;color:var(--gray);font-size:1.8rem;cursor:pointer;line-height:1;}
+.modal-close:hover{color:var(--white);}
+.modal-tag{font-family:'DM Mono',monospace;font-size:0.75rem;color:var(--electric);letter-spacing:0.1em;margin-bottom:0.8rem;}
+.modal-title{font-size:1.8rem;font-weight:700;margin-bottom:1rem;}
+.modal-img{width:100%;border-radius:10px;margin-bottom:1.5rem;border:1px solid rgba(255,255,255,0.08);}
+.modal-imgs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:1.5rem;}
+.modal-imgs img{width:100%;border-radius:8px;border:1px solid rgba(255,255,255,0.08);}
+.modal-desc{color:var(--gray);line-height:1.8;margin-bottom:1.5rem;font-size:0.95rem;}
+.modal-features{list-style:none;margin-bottom:1.5rem;}
+.modal-features li{color:var(--gray);font-size:0.9rem;padding:8px 0;padding-left:20px;position:relative;border-bottom:1px solid rgba(255,255,255,0.04);}
+.modal-features li::before{content:'▸';position:absolute;left:0;color:var(--electric);}
+.modal-features li strong{color:var(--white);}
+.modal-tools{display:flex;flex-wrap:wrap;gap:8px;}
+.modal-tool{font-size:0.8rem;padding:6px 14px;border-radius:6px;background:rgba(46,139,245,0.1);border:1px solid rgba(46,139,245,0.2);color:var(--electric);}
 
-  /* ABOUT */
-  .about { background: var(--navy2); }
-  .about-grid {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 4rem; align-items: start;
-  }
-  .about-text p { color: var(--gray); line-height: 1.8; margin-bottom: 1.2rem; font-size: 0.97rem; }
-  .about-text p strong { color: var(--white); }
-  .about-highlight {
-    background: linear-gradient(135deg, rgba(46,139,245,0.1), rgba(240,165,0,0.05));
-    border: 1px solid rgba(46,139,245,0.2);
-    border-left: 3px solid var(--electric);
-    padding: 20px 24px; border-radius: 8px;
-    margin-top: 1.5rem;
-    font-size: 0.95rem; color: var(--white);
-    font-style: italic;
-  }
-  .skills-grid { display: flex; flex-direction: column; gap: 1rem; }
-  .skill-item { }
-  .skill-header { display: flex; justify-content: space-between; margin-bottom: 8px; }
-  .skill-name { font-size: 0.9rem; font-weight: 500; }
-  .skill-pct { font-family: 'DM Mono', monospace; font-size: 0.8rem; color: var(--gold); }
-  .skill-bar { height: 4px; background: rgba(255,255,255,0.08); border-radius: 2px; overflow: hidden; }
-  .skill-fill { height: 100%; border-radius: 2px; background: linear-gradient(90deg, var(--electric), var(--gold)); }
+/* SKILLS */
+.about{background:var(--navy2);}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+.about-text p{color:var(--gray);line-height:1.8;margin-bottom:1.2rem;font-size:0.97rem;}
+.about-text p strong{color:var(--white);}
+.about-highlight{background:linear-gradient(135deg,rgba(46,139,245,0.1),rgba(240,165,0,0.05));border-left:3px solid var(--electric);padding:20px 24px;border-radius:8px;margin-top:1.5rem;font-size:0.95rem;color:var(--white);font-style:italic;}
+.skill-header{display:flex;justify-content:space-between;margin-bottom:8px;}
+.skill-name{font-size:0.9rem;font-weight:500;}
+.skill-pct{font-family:'DM Mono',monospace;font-size:0.8rem;color:var(--gold);}
+.skill-bar{height:4px;background:rgba(255,255,255,0.08);border-radius:2px;overflow:hidden;margin-bottom:14px;}
+.skill-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--electric),var(--gold));}
 
-  /* PROJECTS */
-  .projects-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 1.5rem;
-  }
-  .project-card {
-    background: var(--card);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 12px; padding: 28px;
-    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
-    position: relative; overflow: hidden;
-  }
-  .project-card::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-    background: linear-gradient(90deg, var(--electric), var(--gold));
-    opacity: 0; transition: opacity 0.2s;
-  }
-  .project-card:hover { transform: translateY(-4px); border-color: rgba(46,139,245,0.3); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
-  .project-card:hover::before { opacity: 1; }
-  .project-icon { font-size: 2rem; margin-bottom: 1rem; }
-  .project-tag {
-    display: inline-block; font-size: 0.72rem;
-    font-family: 'DM Mono', monospace;
-    color: var(--electric); background: rgba(46,139,245,0.1);
-    padding: 3px 10px; border-radius: 4px;
-    margin-bottom: 0.8rem; letter-spacing: 0.05em;
-  }
-  .project-title { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.8rem; }
-  .project-desc { color: var(--gray); font-size: 0.88rem; line-height: 1.7; margin-bottom: 1.2rem; }
-  .project-tools { display: flex; flex-wrap: wrap; gap: 6px; }
-  .tool-badge {
-    font-size: 0.73rem; padding: 4px 10px; border-radius: 4px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.08);
-    color: var(--gray);
-  }
+/* TIMELINE */
+.experience{background:var(--navy2);}
+.timeline{position:relative;padding-left:32px;}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--electric),var(--gold),transparent);}
+.timeline-item{position:relative;margin-bottom:3rem;}
+.timeline-dot{position:absolute;left:-38px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--electric);box-shadow:0 0 0 4px rgba(46,139,245,0.2);}
+.timeline-date{font-family:'DM Mono',monospace;font-size:0.78rem;color:var(--gold);margin-bottom:0.4rem;}
+.timeline-company{font-size:1.1rem;font-weight:600;margin-bottom:0.2rem;}
+.timeline-role{color:var(--electric);font-size:0.9rem;margin-bottom:0.8rem;}
+.timeline-bullets{list-style:none;}
+.timeline-bullets li{color:var(--gray);font-size:0.88rem;line-height:1.7;margin-bottom:0.5rem;padding-left:16px;position:relative;}
+.timeline-bullets li::before{content:'▸';position:absolute;left:0;color:var(--electric);}
+.timeline-bullets li strong{color:var(--white);}
 
-  /* EXPERIENCE */
-  .experience { background: var(--navy2); }
-  .timeline { position: relative; padding-left: 32px; }
-  .timeline::before {
-    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
-    width: 1px; background: linear-gradient(to bottom, var(--electric), var(--gold), transparent);
-  }
-  .timeline-item { position: relative; margin-bottom: 3rem; }
-  .timeline-dot {
-    position: absolute; left: -38px; top: 4px;
-    width: 12px; height: 12px; border-radius: 50%;
-    background: var(--electric);
-    box-shadow: 0 0 0 4px rgba(46,139,245,0.2);
-  }
-  .timeline-date {
-    font-family: 'DM Mono', monospace; font-size: 0.78rem;
-    color: var(--gold); margin-bottom: 0.4rem;
-  }
-  .timeline-company { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.2rem; }
-  .timeline-role { color: var(--electric); font-size: 0.9rem; margin-bottom: 0.8rem; }
-  .timeline-bullets { list-style: none; }
-  .timeline-bullets li {
-    color: var(--gray); font-size: 0.88rem; line-height: 1.7;
-    margin-bottom: 0.5rem; padding-left: 16px; position: relative;
-  }
-  .timeline-bullets li::before { content: '▸'; position: absolute; left: 0; color: var(--electric); }
-  .timeline-bullets li strong { color: var(--white); }
+/* EDU */
+.edu-card{background:var(--card2);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:28px;display:flex;gap:1.5rem;align-items:flex-start;margin-bottom:1.2rem;}
+.edu-icon{font-size:2rem;flex-shrink:0;}
+.edu-degree{font-size:1.05rem;font-weight:600;margin-bottom:0.3rem;}
+.edu-school{color:var(--electric);font-size:0.9rem;margin-bottom:0.3rem;}
+.edu-date{font-family:'DM Mono',monospace;font-size:0.78rem;color:var(--gray);margin-bottom:0.5rem;}
+.edu-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(240,165,0,0.1);border:1px solid rgba(240,165,0,0.3);color:var(--gold);font-size:0.8rem;padding:4px 12px;border-radius:20px;}
 
-  /* EDUCATION */
-  .edu-card {
-    background: var(--card2);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 12px; padding: 28px;
-    display: flex; gap: 1.5rem; align-items: flex-start;
-    margin-bottom: 1.2rem;
-  }
-  .edu-icon { font-size: 2rem; flex-shrink: 0; }
-  .edu-degree { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.3rem; }
-  .edu-school { color: var(--electric); font-size: 0.9rem; margin-bottom: 0.3rem; }
-  .edu-date { font-family: 'DM Mono', monospace; font-size: 0.78rem; color: var(--gray); margin-bottom: 0.5rem; }
-  .edu-badge {
-    display: inline-flex; align-items: center; gap: 6px;
-    background: rgba(240,165,0,0.1); border: 1px solid rgba(240,165,0,0.3);
-    color: var(--gold); font-size: 0.8rem; padding: 4px 12px; border-radius: 20px;
-  }
+/* CONTACT */
+.contact{text-align:center;}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;max-width:800px;margin:0 auto 3rem;}
+.contact-card{background:var(--card);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:24px 20px;text-decoration:none;color:var(--white);transition:transform 0.2s,border-color 0.2s;display:flex;flex-direction:column;align-items:center;gap:10px;}
+.contact-card:hover{transform:translateY(-3px);border-color:var(--electric);}
+.contact-card-icon{font-size:1.8rem;}
+.contact-card-label{font-size:0.8rem;color:var(--gray);}
+.contact-card-value{font-size:0.85rem;font-weight:500;}
 
-  /* CONTACT */
-  .contact { text-align: center; }
-  .contact-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.2rem; max-width: 800px; margin: 0 auto 3rem;
-  }
-  .contact-card {
-    background: var(--card);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 12px; padding: 24px 20px;
-    text-decoration: none; color: var(--white);
-    transition: transform 0.2s, border-color 0.2s;
-    display: flex; flex-direction: column; align-items: center; gap: 10px;
-  }
-  .contact-card:hover { transform: translateY(-3px); border-color: var(--electric); }
-  .contact-card-icon { font-size: 1.8rem; }
-  .contact-card-label { font-size: 0.8rem; color: var(--gray); }
-  .contact-card-value { font-size: 0.88rem; font-weight: 500; }
-
-  /* FOOTER */
-  footer {
-    text-align: center; padding: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.06);
-    color: var(--gray); font-size: 0.82rem;
-  }
-
-  /* RESPONSIVE */
-  @media (max-width: 768px) {
-    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-    .hero-stats { gap: 1.5rem; }
-    .nav-links { display: none; }
-  }
+footer{text-align:center;padding:2rem;border-top:1px solid rgba(255,255,255,0.06);color:var(--gray);font-size:0.82rem;}
+@media(max-width:768px){.about-grid{grid-template-columns:1fr;gap:2rem;}.hero-stats{gap:1.5rem;}.nav-links{display:none;}.modal-imgs{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-logo">BB // Portfolio</div>
   <ul class="nav-links">
     <li><a href="#about">À propos</a></li>
+    <li><a href="#freelance">QR Folio</a></li>
     <li><a href="#projects">Projets</a></li>
     <li><a href="#experience">Expérience</a></li>
-    <li><a href="#education">Formation</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -305,29 +151,13 @@
   <div class="hero-content">
     <div class="hero-tag">📍 Sfax, Tunisie · Ouverte à la mobilité France & Gulf</div>
     <h1>Bouthaina<br><span>BADRI</span></h1>
-    <div class="hero-sub">Consultante Power BI · BI RH & Finance · Automatisation & IA</div>
-    <p class="hero-desc">
-      Je transforme les données brutes en écosystèmes décisionnels complets. 
-      De la Vue Client 360° au SIRH intégré, en passant par les workflows IA — 
-      je conçois des solutions que les équipes utilisent vraiment.
-    </p>
+    <div class="hero-sub">Consultante Power BI · BI RH & Finance · Automatisation & IA · Fondatrice QR Folio</div>
+    <p class="hero-desc">Je transforme les données brutes en écosystèmes décisionnels complets. De la Vue Client 360° au SIRH intégré, workflows IA et géolocalisation commerciale — des solutions que les équipes utilisent vraiment.</p>
     <div class="hero-stats">
-      <div class="stat">
-        <div class="stat-num">-40%</div>
-        <div class="stat-label">tâches manuelles éliminées</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">10+</div>
-        <div class="stat-label">modules BI déployés</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">3+</div>
-        <div class="stat-label">années d'expérience</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">18/20</div>
-        <div class="stat-label">Major de promotion</div>
-      </div>
+      <div class="stat"><div class="stat-num">-40%</div><div class="stat-label">tâches manuelles éliminées</div></div>
+      <div class="stat"><div class="stat-num">15+</div><div class="stat-label">projets déployés</div></div>
+      <div class="stat"><div class="stat-num">3+</div><div class="stat-label">années d'expérience</div></div>
+      <div class="stat"><div class="stat-num">18/20</div><div class="stat-label">Major de promotion</div></div>
     </div>
     <div class="hero-btns">
       <a href="#projects" class="btn-primary">🚀 Voir mes projets</a>
@@ -342,41 +172,41 @@
   <h2 class="section-title">Ce que je fais</h2>
   <div class="about-grid">
     <div class="about-text">
-      <p>Je suis <strong>Responsable Systèmes d'Information</strong> chez Group Driss, où j'ai conçu de zéro un écosystème décisionnel couvrant l'intégralité des domaines métiers : Finance, Commercial, RH, Production et Maintenance.</p>
-      <p>Mon approche : <strong>partir du besoin terrain</strong>, concevoir la solution la plus simple et la plus puissante, et la déployer de façon que les équipes l'adoptent naturellement — sans formation lourde.</p>
-      <p>J'intègre <strong>l'intelligence artificielle</strong> dans les workflows pour aller encore plus loin : génération automatique de devis, scoring de fiabilité, circuits de validation intelligents.</p>
-      <div class="about-highlight">
-        "La technologie doit s'effacer. Quand c'est bien conçu, l'utilisateur ne pense plus à l'outil — il pense à son métier."
-      </div>
+      <p>Je suis <strong>Responsable Systèmes d'Information</strong> chez Group Driss et <strong>Fondatrice de QR Folio</strong>, où j'ai conçu de zéro un écosystème décisionnel couvrant Finance, Commercial, RH, Production et Maintenance.</p>
+      <p>Mon approche : <strong>partir du besoin terrain</strong>, concevoir la solution la plus simple et la plus puissante. J'intègre <strong>l'intelligence artificielle</strong> dans les workflows : génération de devis, scoring, géolocalisation commerciale.</p>
+      <div class="about-highlight">"La technologie doit s'effacer. Quand c'est bien conçu, l'utilisateur ne pense plus à l'outil — il pense à son métier."</div>
     </div>
-    <div class="skills-grid">
-      <div class="skill-item">
-        <div class="skill-header"><span class="skill-name">Power BI (DAX, RLS, On-Premise)</span><span class="skill-pct">95%</span></div>
-        <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-header"><span class="skill-name">SQL Server & T-SQL</span><span class="skill-pct">90%</span></div>
-        <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-header"><span class="skill-name">Power Automate & Workflows IA</span><span class="skill-pct">88%</span></div>
-        <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-header"><span class="skill-name">SharePoint & Microsoft Lists</span><span class="skill-pct">85%</span></div>
-        <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-header"><span class="skill-name">Sage ERP & Odoo</span><span class="skill-pct">82%</span></div>
-        <div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-header"><span class="skill-name">C# · ASP.NET Core · Flutter</span><span class="skill-pct">78%</span></div>
-        <div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-header"><span class="skill-name">Power Apps & SharePoint</span><span class="skill-pct">80%</span></div>
-        <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+    <div>
+      <div class="skill-header"><span class="skill-name">Power BI (DAX, RLS, On-Premise)</span><span class="skill-pct">95%</span></div>
+      <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
+      <div class="skill-header"><span class="skill-name">SQL Server & T-SQL</span><span class="skill-pct">90%</span></div>
+      <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+      <div class="skill-header"><span class="skill-name">Power Automate & Workflows IA</span><span class="skill-pct">88%</span></div>
+      <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+      <div class="skill-header"><span class="skill-name">BI RH – SIRH Complet (10 modules)</span><span class="skill-pct">90%</span></div>
+      <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+      <div class="skill-header"><span class="skill-name">SharePoint & Microsoft Lists</span><span class="skill-pct">85%</span></div>
+      <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+      <div class="skill-header"><span class="skill-name">Sage ERP & Odoo</span><span class="skill-pct">82%</span></div>
+      <div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div>
+      <div class="skill-header"><span class="skill-name">C# · ASP.NET Core · Flutter</span><span class="skill-pct">78%</span></div>
+      <div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- QR FOLIO -->
+<section id="freelance" style="padding:60px 5%;">
+  <div class="section-tag">// Activité Freelance</div>
+  <h2 class="section-title">Ma Société – QR Folio</h2>
+  <div class="freelance-banner">
+    <img src="qr.jpeg" alt="QR Folio" class="qrfolio-logo">
+    <div>
+      <div class="freelance-title">QR Folio — L'innovation, sans limites</div>
+      <p class="freelance-desc">Fondatrice et consultante indépendante, je propose des solutions sur mesure en Business Intelligence, automatisation et intégration IA. J'accompagne les entreprises dans leur transformation digitale : SIRH complet, écosystèmes commerciaux, workflows intelligents.</p>
+      <div class="freelance-badges">
+        <span class="f-badge">Power BI</span><span class="f-badge">SIRH</span><span class="f-badge">Automatisation IA</span>
+        <span class="f-badge">Intégration ERP</span><span class="f-badge">Conseil Data</span><span class="f-badge">Géolocalisation</span>
       </div>
     </div>
   </div>
@@ -386,67 +216,138 @@
 <section id="projects">
   <div class="section-tag">// Projets phares</div>
   <h2 class="section-title">Ce que j'ai construit</h2>
-  <p class="section-sub">Des solutions end-to-end, conçues pour des vrais problèmes métiers, déployées en production.</p>
-
+  <p class="section-sub">Cliquez sur un projet pour voir les détails et captures d'écran. 👆</p>
   <div class="projects-grid">
 
-    <div class="project-card">
-      <div class="project-icon">👤</div>
-      <div class="project-tag">COMMERCIAL · FINANCE</div>
-      <div class="project-title">Vue Client 360°</div>
-      <p class="project-desc">Recherche instantanée par client (nom, abréviation, code interne) affichant en quelques secondes : historique commercial complet, recouvrement, impayés, objectifs, produits achetés et prévisions de vente mensuelles et trimestrielles.</p>
-      <div class="project-tools">
-        <span class="tool-badge">Power BI</span><span class="tool-badge">SQL Server</span><span class="tool-badge">RLS</span><span class="tool-badge">DAX</span><span class="tool-badge">SharePoint Lists</span>
+    <div class="project-card" onclick="openModal('modal-prevision')">
+      <img src="12.png" alt="Prévision CA" class="project-img" onerror="this.style.display='none'">
+      <div class="project-body">
+        <div class="project-tag">COMMERCIAL · FINANCE</div>
+        <div class="project-title">Prévision de CA</div>
+        <p class="project-desc">Prévision mensuelle et trimestrielle du chiffre d'affaires avec fourchette min/max, objectifs annuels et répartition par commercial.</p>
+        <div class="project-tools"><span class="tool-badge">Power BI</span><span class="tool-badge">DAX</span><span class="tool-badge">SQL Server</span></div>
+        <div class="click-hint">👆 Cliquer pour voir les détails</div>
       </div>
     </div>
 
-    <div class="project-card">
-      <div class="project-icon">🤖</div>
-      <div class="project-tag">IA · AUTOMATISATION</div>
-      <div class="project-title">Workflow IA – Génération de devis</div>
-      <p class="project-desc">L'IA analyse les besoins clients et génère automatiquement un devis dans Sage avec un scoring de fiabilité (~70-90%). Validation back-office, envoi automatique au client et suivi temps réel de l'avancement de la commande jusqu'à la livraison.</p>
-      <div class="project-tools">
-        <span class="tool-badge">IA</span><span class="tool-badge">Power Automate</span><span class="tool-badge">Sage</span><span class="tool-badge">SQL Server</span>
+    <div class="project-card" onclick="openModal('modal-impaye')">
+      <img src="13.png" alt="Gestion Impayés" class="project-img" onerror="this.style.display='none'">
+      <div class="project-body">
+        <div class="project-tag">RECOUVREMENT · FINANCE</div>
+        <div class="project-title">Gestion des Impayés Clients</div>
+        <p class="project-desc">Suivi complet des créances impayées par ancienneté, alertes automatiques, Top 10 clients et évolution mensuelle.</p>
+        <div class="project-tools"><span class="tool-badge">Power BI</span><span class="tool-badge">SQL Server</span><span class="tool-badge">DAX</span></div>
+        <div class="click-hint">👆 Cliquer pour voir les détails</div>
       </div>
     </div>
 
-    <div class="project-card">
-      <div class="project-icon">👥</div>
-      <div class="project-tag">RH · SIRH</div>
-      <div class="project-title">Suite RH Décisionnelle Complète</div>
-      <p class="project-desc">10 modules RH sous Power BI : Effectifs (pyramide des âges, ancienneté), Absences & Pointage, Masse salariale, Primes par type/département/salarié, Recrutement (pipeline, taux de conversion), Formation, Turnover, Performance, Diversité & Inclusion.</p>
-      <div class="project-tools">
-        <span class="tool-badge">Power BI</span><span class="tool-badge">Sage Paie</span><span class="tool-badge">RLS</span><span class="tool-badge">SQL Server</span><span class="tool-badge">DAX</span>
+    <div class="project-card" onclick="openModal('modal-scenario')">
+      <img src="14.png" alt="Scénario Recouvrement" class="project-img" onerror="this.style.display='none'">
+      <div class="project-body">
+        <div class="project-tag">IA · RECOUVREMENT</div>
+        <div class="project-title">Scénario Recouvrement Intelligent</div>
+        <p class="project-desc">Calendrier intelligent suggérant le meilleur jour de recouvrement par client selon son comportement de paiement historique.</p>
+        <div class="project-tools"><span class="tool-badge">Power BI</span><span class="tool-badge">DAX</span><span class="tool-badge">SQL Server</span></div>
+        <div class="click-hint">👆 Cliquer pour voir les détails</div>
       </div>
     </div>
 
-    <div class="project-card">
-      <div class="project-icon">📦</div>
-      <div class="project-tag">STOCK · TRÉSORERIE</div>
-      <div class="project-title">Gestion Intelligente des Stocks</div>
-      <p class="project-desc">Analyse dynamique du stock par date via Power BI connecté à SQL Server. Permet d'anticiper les achats selon les ventes réelles, maîtriser la trésorerie et réduire les frais financiers. Vision claire : j'achète ce que les clients veulent, quand ils le veulent.</p>
-      <div class="project-tools">
-        <span class="tool-badge">Power BI</span><span class="tool-badge">SQL Server</span><span class="tool-badge">Sage</span><span class="tool-badge">Power Query</span>
+    <div class="project-card" onclick="openModal('modal-publipostage')">
+      <img src="15.png" alt="Publipostage" class="project-img" onerror="this.style.display='none'">
+      <div class="project-body">
+        <div class="project-tag">COMMERCIAL · DEVIS</div>
+        <div class="project-title">Publipostage & Synthèse Devis</div>
+        <p class="project-desc">Synthèse complète des devis avec localisation clients sur carte, statuts, taux de retour/annulation et suivi par commercial.</p>
+        <div class="project-tools"><span class="tool-badge">Power BI</span><span class="tool-badge">SharePoint</span><span class="tool-badge">Maps</span></div>
+        <div class="click-hint">👆 Cliquer pour voir les détails</div>
       </div>
     </div>
 
-    <div class="project-card">
-      <div class="project-icon">📧</div>
-      <div class="project-tag">AUTOMATISATION · RECOUVREMENT</div>
-      <div class="project-title">Relances Automatiques Intelligentes</div>
-      <p class="project-desc">Emails d'échéance envoyés automatiquement via Power Automate avec toutes les factures échues en pièces jointes, personnalisés par client. Zéro intervention manuelle — le système gère l'intégralité du circuit de relance.</p>
-      <div class="project-tools">
-        <span class="tool-badge">Power Automate</span><span class="tool-badge">SharePoint</span><span class="tool-badge">Sage</span><span class="tool-badge">SQL Server</span>
+    <div class="project-card" onclick="openModal('modal-devis')">
+      <img src="16.png" alt="Gestion Devis" class="project-img" onerror="this.style.display='none'">
+      <div class="project-body">
+        <div class="project-tag">COMMERCIAL · PIPELINE</div>
+        <div class="project-title">Gestion des Devis</div>
+        <p class="project-desc">Suivi complet du cycle devis : de la saisie jusqu'à la commande confirmée. Taux de transformation 28,6%, pipeline par statut et Top commerciaux.</p>
+        <div class="project-tools"><span class="tool-badge">Power BI</span><span class="tool-badge">Sage</span><span class="tool-badge">SQL Server</span><span class="tool-badge">Maps</span></div>
+        <div class="click-hint">👆 Cliquer pour voir les détails</div>
       </div>
     </div>
 
-    <div class="project-card">
-      <div class="project-icon">🔗</div>
-      <div class="project-tag">INTÉGRATION · ERP</div>
-      <div class="project-title">Intégration Odoo ↔ Sage</div>
-      <p class="project-desc">Connexion complète entre Odoo (fabrication, maintenance, dépôt) et Sage (commercial, comptabilité, paie) pour centraliser l'information décisionnelle. Une seule source de vérité pour toutes les équipes.</p>
-      <div class="project-tools">
-        <span class="tool-badge">Odoo</span><span class="tool-badge">Sage</span><span class="tool-badge">SQL Server</span><span class="tool-badge">Power BI</span><span class="tool-badge">API</span>
+    <div class="project-card" onclick="openModal('modal-geo')">
+      <img src="17.png" alt="Géolocalisation" class="project-img" onerror="this.style.display='none'">
+      <div class="project-body">
+        <div class="project-tag">IA · GÉOLOCALISATION</div>
+        <div class="project-title">Géolocalisation Commerciale</div>
+        <p class="project-desc">Alerte en temps réel : si le commercial est à moins de 500m d'un client avec facture échue → notification immédiate avec détails client.</p>
+        <div class="project-tools"><span class="tool-badge">Power BI</span><span class="tool-badge">GPS</span><span class="tool-badge">Maps</span><span class="tool-badge">Power Automate</span></div>
+        <div class="click-hint">👆 Cliquer pour voir les détails</div>
+      </div>
+    </div>
+
+    <div class="project-card" onclick="openModal('modal-masse')">
+      <img src="11.png" alt="Masse Salariale" class="project-img" onerror="this.style.display='none'">
+      <div class="project-body">
+        <div class="project-tag">RH · MASSE SALARIALE</div><span class="freelance-tag">QR Folio</span>
+        <div class="project-title">RH – Masse Salariale</div>
+        <p class="project-desc">Tableau de bord analytique des coûts salariaux : évolution YTD, répartition par département, analyse en temps réel et prise de décision stratégique.</p>
+        <div class="project-tools"><span class="tool-badge">Power BI</span><span class="tool-badge">Sage Paie</span><span class="tool-badge">DAX</span></div>
+        <div class="click-hint">👆 Cliquer pour voir les détails</div>
+      </div>
+    </div>
+
+    <div class="project-card" onclick="openModal('modal-matrice')">
+      <img src="10.png" alt="Matrice Recouvrement" class="project-img" onerror="this.style.display='none'">
+      <div class="project-body">
+        <div class="project-tag">RECOUVREMENT · ANALYSE</div>
+        <div class="project-title">Matrice de Recouvrement</div>
+        <p class="project-desc">Distribution des créances par classement d'ancienneté (0-180j+) et par année. Visualisation avancée de l'évolution du portefeuille créances.</p>
+        <div class="project-tools"><span class="tool-badge">Power BI</span><span class="tool-badge">DAX</span><span class="tool-badge">SQL Server</span></div>
+        <div class="click-hint">👆 Cliquer pour voir les détails</div>
+      </div>
+    </div>
+
+    <div class="project-card" onclick="openModal('modal-rh')">
+      <img src="02.png" alt="RH Suite" class="project-img" onerror="this.style.display='none'">
+      <div class="project-body">
+        <div class="project-tag">RH · SIRH COMPLET</div><span class="freelance-tag">QR Folio</span>
+        <div class="project-title">Suite RH Décisionnelle – 10 Modules</div>
+        <p class="project-desc">Effectifs, Absences & Pointage, Primes, Recrutement, Formation, Turnover, Performance, Diversité & Inclusion — tout connecté à Sage Paie avec RLS.</p>
+        <div class="project-tools"><span class="tool-badge">Power BI</span><span class="tool-badge">Sage Paie</span><span class="tool-badge">RLS</span><span class="tool-badge">SQL Server</span></div>
+        <div class="click-hint">👆 Cliquer pour voir les détails</div>
+      </div>
+    </div>
+
+    <div class="project-card" onclick="openModal('modal-client360')">
+      <div class="project-img-placeholder">👤</div>
+      <div class="project-body">
+        <div class="project-tag">COMMERCIAL · FINANCE</div>
+        <div class="project-title">Vue Client 360°</div>
+        <p class="project-desc">Recherche instantanée par client : historique, recouvrement, impayés, objectifs, produits et prévisions de vente. RLS multi-niveaux.</p>
+        <div class="project-tools"><span class="tool-badge">Power BI</span><span class="tool-badge">SQL Server</span><span class="tool-badge">RLS</span><span class="tool-badge">SharePoint Lists</span></div>
+        <div class="click-hint">👆 Cliquer pour voir les détails</div>
+      </div>
+    </div>
+
+    <div class="project-card" onclick="openModal('modal-ia')">
+      <div class="project-img-placeholder">🤖</div>
+      <div class="project-body">
+        <div class="project-tag">IA · AUTOMATISATION</div>
+        <div class="project-title">Workflow IA – Génération de Devis</div>
+        <p class="project-desc">IA analyse les besoins clients → génère devis dans Sage avec scoring (~70-90%) → validation back-office → envoi automatique → suivi temps réel.</p>
+        <div class="project-tools"><span class="tool-badge">IA</span><span class="tool-badge">Power Automate</span><span class="tool-badge">Sage</span><span class="tool-badge">SQL Server</span></div>
+        <div class="click-hint">👆 Cliquer pour voir les détails</div>
+      </div>
+    </div>
+
+    <div class="project-card" onclick="openModal('modal-cnss')">
+      <div class="project-img-placeholder">🏛️</div>
+      <div class="project-body">
+        <div class="project-tag">RH · DÉCLARATIONS SOCIALES</div>
+        <div class="project-title">Réconciliation CNSS (Tej) ↔ Sage</div>
+        <p class="project-desc">Rapprochement entre données Tej (CNSS) et Sage Paie : détection des écarts, contrôle des cotisations sociales et validation des effectifs déclarés.</p>
+        <div class="project-tools"><span class="tool-badge">Power BI</span><span class="tool-badge">Excel</span><span class="tool-badge">Sage Paie</span><span class="tool-badge">Tej/CNSS</span></div>
+        <div class="click-hint">👆 Cliquer pour voir les détails</div>
       </div>
     </div>
 
@@ -457,36 +358,41 @@
 <section class="experience" id="experience">
   <div class="section-tag">// Expérience</div>
   <h2 class="section-title">Mon parcours</h2>
-  <p class="section-sub">3+ années à construire des solutions qui font la différence sur le terrain.</p>
-
   <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">2024 – Présent</div>
+      <div class="timeline-company">QR Folio — Fondatrice & Consultante Freelance</div>
+      <div class="timeline-role">Microsoft Power Platform · BI · SIRH · Automatisation IA</div>
+      <ul class="timeline-bullets">
+        <li>Suites RH décisionnelles complètes (10 modules Power BI)</li>
+        <li>Géolocalisation commerciale & scénarios de recouvrement intelligents</li>
+        <li>Gestion des devis, publipostage et prévision de CA</li>
+        <li>Accompagnement des entreprises dans leur transformation digitale</li>
+      </ul>
+    </div>
     <div class="timeline-item">
       <div class="timeline-dot"></div>
       <div class="timeline-date">Oct. 2023 – Présent</div>
       <div class="timeline-company">Group Driss – SIM & Med Industrie · Sfax</div>
       <div class="timeline-role">Responsable Systèmes d'Information | Data, BI, RH & Automatisation IA</div>
       <ul class="timeline-bullets">
-        <li>Conception d'un <strong>écosystème décisionnel complet</strong> couvrant Finance, Commercial, RH et Production</li>
-        <li><strong>RLS multi-niveaux</strong> : chaque commercial voit ses données, la direction voit tout</li>
-        <li><strong>Suite RH 10 modules</strong> : Effectifs, Absences, Masse salariale, Primes, Recrutement, Formation, Turnover...</li>
-        <li><strong>Workflow IA</strong> : génération automatique de devis avec scoring de fiabilité</li>
-        <li><strong>Relances automatiques</strong> avec pièces jointes via Power Automate</li>
-        <li>Intégration <strong>Odoo ↔ Sage</strong> pour centraliser toute la data groupe</li>
-        <li>✅ <strong>-40% de tâches manuelles</strong> · Trésorerie maîtrisée · Circuit commercial automatisé</li>
+        <li>Écosystème décisionnel complet : <strong>Finance, Commercial, RH, Production</strong></li>
+        <li><strong>RLS multi-niveaux</strong>, Vue Client 360°, Gestion stocks par date</li>
+        <li><strong>Workflow IA</strong> : génération automatique de devis avec scoring</li>
+        <li>Géolocalisation commerciale avec alertes à 500m</li>
+        <li>✅ <strong>-40% tâches manuelles</strong> · Trésorerie maîtrisée</li>
       </ul>
     </div>
-
     <div class="timeline-item">
-      <div class="timeline-dot" style="background: var(--gold);"></div>
+      <div class="timeline-dot" style="background:var(--gold);"></div>
       <div class="timeline-date">Fév. 2022 – Oct. 2023</div>
       <div class="timeline-company">Group STTAT – GMS & GMC · Sfax / Sousse</div>
       <div class="timeline-role">Développeuse Full-Stack Mobile & Backend</div>
       <ul class="timeline-bullets">
         <li>APIs REST sécurisées avec <strong>ASP.NET Core & C#</strong></li>
-        <li>Applications mobiles <strong>Flutter</strong> avec Firebase et SQL Server</li>
-        <li>Solutions de traçabilité <strong>QR Code / codes-barres</strong></li>
-        <li>Applications <strong>GMAO et HSE</strong> (Hygiène, Sécurité, Santé)</li>
-        <li>Système de <strong>chat interne sécurisé</strong> pour la communication opérationnelle</li>
+        <li>Applications mobiles <strong>Flutter</strong> · GMAO · HSE</li>
+        <li>Traçabilité QR Code / codes-barres</li>
       </ul>
     </div>
   </div>
@@ -496,87 +402,313 @@
 <section id="education">
   <div class="section-tag">// Formation</div>
   <h2 class="section-title">Ma formation</h2>
-
   <div class="edu-card">
     <div class="edu-icon">🎓</div>
     <div>
-      <div class="edu-degree">Licence en Informatique de Gestion – Spécialité Business Intelligence</div>
+      <div class="edu-degree">Licence Informatique de Gestion – Spécialité Business Intelligence</div>
       <div class="edu-school">Institut Supérieur d'Administration des Affaires de Sfax (ISAAS)</div>
       <div class="edu-date">2019 – 2022</div>
-      <div class="edu-badge">🏆 Major de promotion · 18/20 · Projet présenté à Univexpo 2022</div>
+      <div class="edu-badge">🏆 Major de promotion · 18/20 · Présenté à Univexpo 2022</div>
     </div>
   </div>
-
   <div class="edu-card">
     <div class="edu-icon">📚</div>
     <div>
       <div class="edu-degree">Baccalauréat Sciences Expérimentales</div>
-      <div class="edu-school">Lycée Mahmoud Megaliche</div>
-      <div class="edu-date">2019</div>
+      <div class="edu-school">Lycée Mahmoud Megaliche · 2019</div>
     </div>
   </div>
-
-  <!-- LANGUES -->
-  <div style="margin-top: 3rem;">
+  <div style="margin-top:3rem;">
     <div class="section-tag">// Langues</div>
-    <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1rem;">
-      <div style="background: var(--card); border-radius: 10px; padding: 16px 24px; border: 1px solid rgba(255,255,255,0.06);">
-        <div style="font-size: 1.3rem; margin-bottom: 4px;">🇹🇳</div>
-        <div style="font-weight: 600; font-size: 0.95rem;">Arabe</div>
-        <div style="color: var(--gray); font-size: 0.8rem;">Langue maternelle</div>
-      </div>
-      <div style="background: var(--card); border-radius: 10px; padding: 16px 24px; border: 1px solid rgba(255,255,255,0.06);">
-        <div style="font-size: 1.3rem; margin-bottom: 4px;">🇫🇷</div>
-        <div style="font-weight: 600; font-size: 0.95rem;">Français</div>
-        <div style="color: var(--gold); font-size: 0.8rem;">Courant – C1/C2</div>
-      </div>
-      <div style="background: var(--card); border-radius: 10px; padding: 16px 24px; border: 1px solid rgba(255,255,255,0.06);">
-        <div style="font-size: 1.3rem; margin-bottom: 4px;">🇬🇧</div>
-        <div style="font-weight: 600; font-size: 0.95rem;">Anglais</div>
-        <div style="color: var(--electric); font-size: 0.8rem;">Professionnel – B2</div>
-      </div>
-      <div style="background: var(--card); border-radius: 10px; padding: 16px 24px; border: 1px solid rgba(255,255,255,0.06);">
-        <div style="font-size: 1.3rem; margin-bottom: 4px;">🇩🇪</div>
-        <div style="font-weight: 600; font-size: 0.95rem;">Allemand</div>
-        <div style="color: var(--gray); font-size: 0.8rem;">Notions de base</div>
-      </div>
+    <div style="display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:1rem;">
+      <div style="background:var(--card);border-radius:10px;padding:16px 24px;border:1px solid rgba(255,255,255,0.06);">🇹🇳<div style="font-weight:600;font-size:0.95rem;margin-top:4px;">Arabe</div><div style="color:var(--gray);font-size:0.8rem;">Langue maternelle</div></div>
+      <div style="background:var(--card);border-radius:10px;padding:16px 24px;border:1px solid rgba(255,255,255,0.06);">🇫🇷<div style="font-weight:600;font-size:0.95rem;margin-top:4px;">Français</div><div style="color:var(--gold);font-size:0.8rem;">Courant – C1/C2</div></div>
+      <div style="background:var(--card);border-radius:10px;padding:16px 24px;border:1px solid rgba(255,255,255,0.06);">🇬🇧<div style="font-weight:600;font-size:0.95rem;margin-top:4px;">Anglais</div><div style="color:var(--electric);font-size:0.8rem;">Professionnel – B2</div></div>
+      <div style="background:var(--card);border-radius:10px;padding:16px 24px;border:1px solid rgba(255,255,255,0.06);">🇩🇪<div style="font-weight:600;font-size:0.95rem;margin-top:4px;">Allemand</div><div style="color:var(--gray);font-size:0.8rem;">Notions de base</div></div>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section class="contact" id="contact" style="background: var(--navy2);">
+<section class="contact" id="contact" style="background:var(--navy2);">
   <div class="section-tag" style="text-align:center;">// Contact</div>
   <h2 class="section-title">Travaillons ensemble</h2>
-  <p class="section-sub" style="margin: 0 auto 3rem;">Ouverte aux opportunités en France 🇫🇷 · UAE 🇦🇪 · Qatar 🇶🇦 · KSA 🇸🇦</p>
-
+  <p class="section-sub" style="margin:0 auto 3rem;">Ouverte aux opportunités en France 🇫🇷 · UAE 🇦🇪 · Qatar 🇶🇦 · KSA 🇸🇦</p>
   <div class="contact-grid">
-    <a href="tel:+21625962697" class="contact-card">
-      <div class="contact-card-icon">📞</div>
-      <div class="contact-card-label">Téléphone</div>
-      <div class="contact-card-value">+216 25 962 697</div>
-    </a>
-    <a href="mailto:bouthaina-badri@outlook.com" class="contact-card">
-      <div class="contact-card-icon">✉️</div>
-      <div class="contact-card-label">Email</div>
-      <div class="contact-card-value">bouthaina-badri@outlook.com</div>
-    </a>
-    <a href="https://www.linkedin.com/in/bouthaina-badri-30a082243/" target="_blank" class="contact-card">
-      <div class="contact-card-icon">🔗</div>
-      <div class="contact-card-label">LinkedIn</div>
-      <div class="contact-card-value">Bouthaina BADRI</div>
-    </a>
-    <a href="#" class="contact-card">
-      <div class="contact-card-icon">📍</div>
-      <div class="contact-card-label">Localisation</div>
-      <div class="contact-card-value">Sfax, Tunisie</div>
-    </a>
+    <a href="tel:+21625962697" class="contact-card"><div class="contact-card-icon">📞</div><div class="contact-card-label">Téléphone</div><div class="contact-card-value">+216 25 962 697</div></a>
+    <a href="mailto:bouthaina-badri@outlook.com" class="contact-card"><div class="contact-card-icon">✉️</div><div class="contact-card-label">Email</div><div class="contact-card-value">bouthaina-badri@outlook.com</div></a>
+    <a href="https://www.linkedin.com/in/bouthaina-badri-30a082243/" target="_blank" class="contact-card"><div class="contact-card-icon">🔗</div><div class="contact-card-label">LinkedIn</div><div class="contact-card-value">Bouthaina BADRI</div></a>
+    <a href="https://bouthaina-badri.github.io" class="contact-card"><div class="contact-card-icon">🌐</div><div class="contact-card-label">Portfolio</div><div class="contact-card-value">bouthaina-badri.github.io</div></a>
   </div>
 </section>
 
-<footer>
-  <p>© 2026 Bouthaina BADRI · Consultante Power BI & Power Platform · Conçu avec passion 💙</p>
-</footer>
+<footer><p>© 2026 Bouthaina BADRI · QR Folio – L'innovation, sans limites 💙</p></footer>
 
+<!-- ═══════════════════ MODALS ═══════════════════ -->
+
+<!-- Prévision CA -->
+<div class="modal-overlay" id="modal-prevision">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-prevision')">×</button>
+    <div class="modal-tag">COMMERCIAL · FINANCE · PRÉVISION</div>
+    <h2 class="modal-title">Prévision de CA</h2>
+    <img src="12.png" class="modal-img" alt="Prévision CA">
+    <p class="modal-desc">Tableau de bord de prévision mensuelle et trimestrielle du chiffre d'affaires. Combine le CA réalisé historique avec des projections basées sur les tendances saisonnières et le comportement client. Permet à la direction et aux commerciaux d'anticiper les performances futures avec une fourchette min/max de confiance.</p>
+    <ul class="modal-features">
+      <li><strong>CA Réalisé vs CA Prévu</strong> : suivi en temps réel avec fourchette min/max de confiance</li>
+      <li><strong>Objectif annuel</strong> : taux d'atteinte en pourcentage (ex: 91% de 28M)</li>
+      <li><strong>Répartition par commercial</strong> : contribution de chaque membre de l'équipe au CA prévu</li>
+      <li><strong>Top 5 clients</strong> : prévision par client avec évolution vs N-1</li>
+      <li><strong>Vue mensuelle & trimestrielle</strong> : bascule entre les deux granularités</li>
+      <li><strong>Synthèse prévisionnelle</strong> : meilleur mois prévu, mois moyen, fourchette annuelle</li>
+    </ul>
+    <div class="modal-tools"><span class="modal-tool">Power BI</span><span class="modal-tool">DAX</span><span class="modal-tool">SQL Server</span><span class="modal-tool">Power Query</span><span class="modal-tool">Sage</span></div>
+  </div>
+</div>
+
+<!-- Impayés -->
+<div class="modal-overlay" id="modal-impaye">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-impaye')">×</button>
+    <div class="modal-tag">RECOUVREMENT · FINANCE · ALERTES</div>
+    <h2 class="modal-title">Gestion des Impayés Clients</h2>
+    <img src="13.png" class="modal-img" alt="Gestion Impayés">
+    <p class="modal-desc">Tableau de bord complet de suivi des créances impayées. Permet aux équipes recouvrement d'identifier rapidement les clients à risque, les créances critiques (>120 jours) et de prioriser les actions de relance. Intégration d'alertes automatiques pour les dépassements de seuils.</p>
+    <ul class="modal-features">
+      <li><strong>Total impayés</strong> avec évolution vs N-1 et répartition par ancienneté (0-30j, 31-60j, 61-90j, 91-120j, >120j)</li>
+      <li><strong>Matrice client</strong> : détail par client avec encours global et impayés par tranche</li>
+      <li><strong>Top 10 clients</strong> par montant impayé</li>
+      <li><strong>Alertes automatiques</strong> : dépassement 120j, nouveaux contentieux, relances échues</li>
+      <li><strong>Évolution mensuelle</strong> des impayés pour détecter les tendances</li>
+      <li><strong>Recherche instantanée</strong> par nom client ou code</li>
+    </ul>
+    <div class="modal-tools"><span class="modal-tool">Power BI</span><span class="modal-tool">DAX</span><span class="modal-tool">SQL Server</span><span class="modal-tool">Power Automate</span></div>
+  </div>
+</div>
+
+<!-- Scénario Recouvrement -->
+<div class="modal-overlay" id="modal-scenario">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-scenario')">×</button>
+    <div class="modal-tag">IA · RECOUVREMENT · CALENDRIER</div>
+    <h2 class="modal-title">Scénario Recouvrement Intelligent</h2>
+    <div class="modal-imgs">
+      <img src="14.png" alt="Scénario Recouvrement">
+      <img src="10.png" alt="Matrice Recouvrement">
+    </div>
+    <p class="modal-desc">Solution innovante qui analyse le comportement de paiement historique de chaque client pour suggérer le meilleur jour et le meilleur recouveur pour contacter ce client. Le calendrier affiche les montants à recouvrer jour par jour, permettant une planification optimale des actions de recouvrement.</p>
+    <ul class="modal-features">
+      <li><strong>Calendrier mensuel</strong> : montants à recouvrer par jour selon la date majoritaire de recouvrement du client</li>
+      <li><strong>Détail des factures</strong> : liste complète avec date FA, montant restant à payer, société et scénario recommandé</li>
+      <li><strong>Filtres avancés</strong> : par société, commercial, recouveur, ville, région, période</li>
+      <li><strong>KPIs clés</strong> : total à recouvrer, retard moyen, nombre de factures, taux de recouvrement prévu</li>
+      <li><strong>Distribution des créances</strong> par classement d'ancienneté et par année (visualisation avancée)</li>
+    </ul>
+    <div class="modal-tools"><span class="modal-tool">Power BI</span><span class="modal-tool">DAX</span><span class="modal-tool">SQL Server</span><span class="modal-tool">Power Query</span></div>
+  </div>
+</div>
+
+<!-- Publipostage -->
+<div class="modal-overlay" id="modal-publipostage">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-publipostage')">×</button>
+    <div class="modal-tag">COMMERCIAL · DEVIS · CARTOGRAPHIE</div>
+    <h2 class="modal-title">Publipostage & Synthèse Devis</h2>
+    <img src="15.png" class="modal-img" alt="Publipostage">
+    <p class="modal-desc">Tableau de bord de synthèse des devis avec géolocalisation des clients sur carte interactive. Permet aux équipes commerciales de visualiser l'ensemble de leur portefeuille devis, identifier les devis en retard et suivre les performances par zone géographique.</p>
+    <ul class="modal-features">
+      <li><strong>4 382 devis</strong> référencés avec statuts (Saisi, Envoyé, En retard, Retour, Annulé)</li>
+      <li><strong>Carte interactive</strong> : localisation de tous les clients avec leurs devis</li>
+      <li><strong>Zone Nord/Sud/Centre</strong> : filtrage par zone commerciale</li>
+      <li><strong>Taux de retour</strong> (5,12%) et <strong>taux d'annulation</strong> (3,24%) en temps réel</li>
+      <li><strong>Détail par ligne</strong> : produit, quantité, remise, prix unitaire, montant HT brut et net</li>
+      <li><strong>Résultat publipostage</strong> : bouton d'action direct pour relancer les devis en retard</li>
+    </ul>
+    <div class="modal-tools"><span class="modal-tool">Power BI</span><span class="modal-tool">SharePoint Lists</span><span class="modal-tool">Maps</span><span class="modal-tool">Power Automate</span><span class="modal-tool">Sage</span></div>
+  </div>
+</div>
+
+<!-- Gestion Devis -->
+<div class="modal-overlay" id="modal-devis">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-devis')">×</button>
+    <div class="modal-tag">COMMERCIAL · PIPELINE · COMMANDE</div>
+    <h2 class="modal-title">Gestion des Devis – Du Devis à la Commande</h2>
+    <img src="16.png" class="modal-img" alt="Gestion Devis">
+    <p class="modal-desc">Suivi complet du cycle de vie des devis : de la création jusqu'à la confirmation de commande. Chaque devis est tracé à travers ses étapes (Accepté, Envoyé, En cours, Refusé, Annulé) avec accès au détail complet incluant produits, quantités, remises et géolocalisation du client.</p>
+    <ul class="modal-features">
+      <li><strong>452 devis</strong> · 1 256 780 MAD HT · Taux de transformation 28,6%</li>
+      <li><strong>Pipeline visuel</strong> : répartition par statut (Accepté 28,6%, Envoyé 48,7%, En cours 22,7%...)</li>
+      <li><strong>Fiche devis détaillée</strong> : produits, quantités, remises, montants + historique des actions</li>
+      <li><strong>Localisation client sur carte</strong> : position géographique de chaque client</li>
+      <li><strong>Top 5 commerciaux</strong> par montant HT</li>
+      <li><strong>Évolution mensuelle</strong> des devis avec tendances</li>
+      <li><strong>Bouton Publipostage</strong> : relance directe depuis l'interface</li>
+    </ul>
+    <div class="modal-tools"><span class="modal-tool">Power BI</span><span class="modal-tool">Sage</span><span class="modal-tool">SQL Server</span><span class="modal-tool">SharePoint</span><span class="modal-tool">Maps</span></div>
+  </div>
+</div>
+
+<!-- Géolocalisation -->
+<div class="modal-overlay" id="modal-geo">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-geo')">×</button>
+    <div class="modal-tag">IA · GÉOLOCALISATION · RECOUVREMENT</div>
+    <h2 class="modal-title">Géolocalisation Commerciale</h2>
+    <img src="17.png" class="modal-img" alt="Géolocalisation">
+    <p class="modal-desc">Solution innovante de géolocalisation en temps réel : quand un commercial se trouve à moins de 500m d'un client ayant des factures échues depuis plus de 60 jours, une alerte est déclenchée avec toutes les informations nécessaires pour une visite de recouvrement spontanée. Optimise les déplacements terrain et maximise les opportunités de recouvrement.</p>
+    <ul class="modal-features">
+      <li><strong>Rayon configurable</strong> : détection des clients à 500m (paramétrable)</li>
+      <li><strong>Alertes intelligentes</strong> : "Vous êtes à 450m du client ALTAS CONSTRUCTION avec 3 factures en retard"</li>
+      <li><strong>Carte temps réel</strong> : position du commercial + clients avec échéances dépassées</li>
+      <li><strong>Fiche client complète</strong> : commercial responsable, téléphone, email, adresse, montant et délai moyen</li>
+      <li><strong>5 clients détectés</strong> · 12 factures en retard · 324 780 MAD en retard</li>
+      <li><strong>Bouton "Notifier ce client"</strong> : action directe depuis l'interface</li>
+    </ul>
+    <div class="modal-tools"><span class="modal-tool">Power BI</span><span class="modal-tool">GPS / Géolocalisation</span><span class="modal-tool">Maps</span><span class="modal-tool">Power Automate</span><span class="modal-tool">SQL Server</span></div>
+  </div>
+</div>
+
+<!-- Masse Salariale -->
+<div class="modal-overlay" id="modal-masse">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-masse')">×</button>
+    <div class="modal-tag">RH · MASSE SALARIALE · QR FOLIO</div>
+    <h2 class="modal-title">RH – Masse Salariale (QR Folio)</h2>
+    <img src="11.png" class="modal-img" alt="Masse Salariale">
+    <p class="modal-desc">Solution QR Folio de tableau de bord analytique des coûts salariaux. Conçu pour les DRH et directeurs financiers, ce tableau de bord offre une vision complète et en temps réel de la masse salariale avec des indicateurs clés pour la prise de décision stratégique.</p>
+    <ul class="modal-features">
+      <li><strong>Masse salariale totale</strong> : 1 082 400 TND · +8,6% vs mois précédent</li>
+      <li><strong>Analyse en temps réel</strong> : indicateurs clés et alertes automatiques</li>
+      <li><strong>Répartition par département</strong> : Production, Commercial, Technique, Support...</li>
+      <li><strong>Visualisation intelligente</strong> : graphiques clairs pour données claires</li>
+      <li><strong>Gestion RH centralisée</strong> : connexion directe avec Sage Paie</li>
+    </ul>
+    <div class="modal-tools"><span class="modal-tool">Power BI</span><span class="modal-tool">Sage Paie</span><span class="modal-tool">DAX</span><span class="modal-tool">SQL Server</span></div>
+  </div>
+</div>
+
+<!-- Matrice Recouvrement -->
+<div class="modal-overlay" id="modal-matrice">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-matrice')">×</button>
+    <div class="modal-tag">RECOUVREMENT · ANALYSE AVANCÉE</div>
+    <h2 class="modal-title">Matrice de Recouvrement</h2>
+    <img src="10.png" class="modal-img" alt="Matrice Recouvrement">
+    <p class="modal-desc">Visualisation avancée de la distribution des créances par classement d'ancienneté et par année. Permet d'analyser l'évolution du portefeuille créances sur plusieurs exercices et d'identifier les tendances structurelles dans le comportement de paiement des clients.</p>
+    <ul class="modal-features">
+      <li><strong>Classification par ancienneté</strong> : C(0-30j), D(30-60j), E(60-90j), F(90-120j), H(120-150j), I(150-180j), J(≥180j)</li>
+      <li><strong>Comparaison multi-années</strong> : 2023, 2024, 2025, 2026 sur le même graphique</li>
+      <li><strong>Visualisation StreamGraph</strong> : évolution fluide des proportions par catégorie</li>
+      <li><strong>Analyse des tendances</strong> : identification des classes qui s'aggravent ou s'améliorent</li>
+    </ul>
+    <div class="modal-tools"><span class="modal-tool">Power BI</span><span class="modal-tool">DAX</span><span class="modal-tool">SQL Server</span><span class="modal-tool">Power Query</span></div>
+  </div>
+</div>
+
+<!-- Suite RH -->
+<div class="modal-overlay" id="modal-rh">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-rh')">×</button>
+    <div class="modal-tag">RH · SIRH COMPLET · QR FOLIO</div>
+    <h2 class="modal-title">Suite RH Décisionnelle – 10 Modules</h2>
+    <div class="modal-imgs">
+      <img src="02.png" alt="Absences & Pointage">
+      <img src="03.png" alt="Effectifs">
+      <img src="06.png" alt="Recrutement">
+      <img src="07.png" alt="Turnover">
+    </div>
+    <p class="modal-desc">Suite RH complète sous Power BI couvrant l'intégralité des besoins décisionnels RH. Chaque module est connecté à Sage Paie et SQL Server avec RLS multi-niveaux permettant des vues personnalisées selon le rôle (DRH, manager, direction).</p>
+    <ul class="modal-features">
+      <li><strong>Effectifs</strong> : pyramide des âges, ancienneté, répartition géographique, Top 5 départements</li>
+      <li><strong>Absences & Pointage</strong> : analyse par type/département, pointage temps réel, rapport automatique</li>
+      <li><strong>Masse salariale & Primes</strong> : par type, département et salarié · Budget YTD vs annuel</li>
+      <li><strong>Recrutement</strong> : pipeline complet · 356 candidatures · Taux conversion 28,1% · Délai 28j</li>
+      <li><strong>Formation</strong> : 1 248h · 186 collaborateurs · 78,6% participation · 36 580 TND coût</li>
+      <li><strong>Turnover</strong> : 12,4% taux · Coût 256 800 TND · Raisons de départ · Impact productivité</li>
+      <li><strong>Performance, Diversité & Inclusion</strong> : KPIs RH stratégiques</li>
+    </ul>
+    <div class="modal-tools"><span class="modal-tool">Power BI</span><span class="modal-tool">Sage Paie</span><span class="modal-tool">RLS</span><span class="modal-tool">SQL Server</span><span class="modal-tool">DAX</span></div>
+  </div>
+</div>
+
+<!-- Vue Client 360 -->
+<div class="modal-overlay" id="modal-client360">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-client360')">×</button>
+    <div class="modal-tag">COMMERCIAL · FINANCE · 360°</div>
+    <h2 class="modal-title">Vue Client 360°</h2>
+    <div style="background:linear-gradient(135deg,var(--navy2),var(--card));height:200px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:4rem;margin-bottom:1.5rem;">👤</div>
+    <p class="modal-desc">Tableau de bord unique donnant une vision complète à 360° de chaque client. Accessible par recherche instantanée (nom, abréviation ou code interne), il concentre en une seule interface toutes les informations nécessaires pour une prise de décision éclairée.</p>
+    <ul class="modal-features">
+      <li><strong>Recherche instantanée</strong> : par nom, abréviation ou code interne client</li>
+      <li><strong>Historique commercial</strong> : toutes les transactions, commandes et interactions</li>
+      <li><strong>Recouvrement & Impayés</strong> : encours, échéances dépassées, statut contentieux</li>
+      <li><strong>Objectifs commerciaux</strong> : réalisé vs objectif par période</li>
+      <li><strong>Produits achetés</strong> : catalogue d'achat avec fréquences et volumes</li>
+      <li><strong>Prévisions de vente</strong> : mensuelle et trimestrielle basées sur l'historique</li>
+      <li><strong>RLS multi-niveaux</strong> : commercial voit ses clients, direction voit tout</li>
+    </ul>
+    <div class="modal-tools"><span class="modal-tool">Power BI</span><span class="modal-tool">SQL Server</span><span class="modal-tool">RLS</span><span class="modal-tool">DAX</span><span class="modal-tool">SharePoint Lists</span></div>
+  </div>
+</div>
+
+<!-- Workflow IA -->
+<div class="modal-overlay" id="modal-ia">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-ia')">×</button>
+    <div class="modal-tag">IA · AUTOMATISATION · DEVIS</div>
+    <h2 class="modal-title">Workflow IA – Génération Automatique de Devis</h2>
+    <div style="background:linear-gradient(135deg,#0a1628,#1a2b40);height:200px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:4rem;margin-bottom:1.5rem;">🤖</div>
+    <p class="modal-desc">Intégration de l'intelligence artificielle dans le circuit commercial. L'IA analyse automatiquement les besoins exprimés par le client, génère un devis structuré dans Sage avec un score de fiabilité, puis orchestre le circuit de validation et d'envoi.</p>
+    <ul class="modal-features">
+      <li><strong>Analyse IA des besoins</strong> : lecture et interprétation automatique des demandes clients</li>
+      <li><strong>Génération devis dans Sage</strong> : création automatique avec produits, quantités et prix</li>
+      <li><strong>Scoring de fiabilité</strong> : ~70-90% de confiance sur la pertinence du devis</li>
+      <li><strong>Validation back-office</strong> : étape de contrôle humain avant envoi</li>
+      <li><strong>Envoi automatique</strong> : email personnalisé au client après validation</li>
+      <li><strong>Suivi temps réel</strong> : avancement de la commande (60% → 90% → livraison)</li>
+    </ul>
+    <div class="modal-tools"><span class="modal-tool">IA</span><span class="modal-tool">Power Automate</span><span class="modal-tool">Sage</span><span class="modal-tool">SQL Server</span><span class="modal-tool">SharePoint</span></div>
+  </div>
+</div>
+
+<!-- CNSS -->
+<div class="modal-overlay" id="modal-cnss">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-cnss')">×</button>
+    <div class="modal-tag">RH · DÉCLARATIONS SOCIALES · CNSS</div>
+    <h2 class="modal-title">Réconciliation CNSS (Tej) ↔ Sage Paie</h2>
+    <div style="background:linear-gradient(135deg,#0a1628,#1a2b40);height:200px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:4rem;margin-bottom:1.5rem;">🏛️</div>
+    <p class="modal-desc">Solution de rapprochement entre les données de la plateforme Tej (CNSS Tunisie) et les données de paie Sage. Permet de détecter automatiquement les écarts entre les déclarations sociales et la réalité de la paie, garantissant la conformité légale de l'entreprise.</p>
+    <ul class="modal-features">
+      <li><strong>Import données Tej</strong> : chargement des RS exportés en Excel depuis la plateforme CNSS</li>
+      <li><strong>Rapprochement automatique</strong> : comparaison avec données Sage Paie</li>
+      <li><strong>Détection des écarts</strong> : salaires déclarés vs réels, effectifs, cotisations</li>
+      <li><strong>Contrôle des cotisations sociales</strong> : vérification cohérence des montants</li>
+      <li><strong>Rapport de conformité</strong> : synthèse des anomalies à corriger</li>
+    </ul>
+    <div class="modal-tools"><span class="modal-tool">Power BI</span><span class="modal-tool">Excel</span><span class="modal-tool">Sage Paie</span><span class="modal-tool">Tej/CNSS</span><span class="modal-tool">Power Query</span></div>
+  </div>
+</div>
+
+<script>
+function openModal(id){
+  document.getElementById(id).classList.add('active');
+  document.body.style.overflow='hidden';
+}
+function closeModal(id){
+  document.getElementById(id).classList.remove('active');
+  document.body.style.overflow='';
+}
+document.querySelectorAll('.modal-overlay').forEach(overlay=>{
+  overlay.addEventListener('click',function(e){
+    if(e.target===this) closeModal(this.id);
+  });
+});
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape') document.querySelectorAll('.modal-overlay.active').forEach(m=>closeModal(m.id));
+});
+</script>
 </body>
 </html>
